@@ -38,6 +38,8 @@ i3-msg  "[con_id=94415260542592]" focus
 最后使用`focus`指令切换到指定的id窗口
 
 ## 参考资料
- [GitHub - cornerman/i3-easyfocus: Focus and select windows in i3](https://github.com/cornerman/i3-easyfocus)
+[GitHub - cornerman/i3-easyfocus: Focus and select windows in i3](https://github.com/cornerman/i3-easyfocus)
+
 [i3: i3 User’s Guide](https://i3wm.org/docs/userguide.html#list_of_commands)
+
 [i3-msg man page - i3 - General Commands | ManKier](https://www.mankier.com/1/i3-msg)
