@@ -1,3 +1,7 @@
+## 简介
+
+在i3中使用快捷键快速切换当前workspace中的windows
+
 ### 快捷键绑定
 
 ```bash
