@@ -11,12 +11,12 @@ def get_current_worksapce():
         if i.get('focused'):
             return i.get('num')
     return False
-def fetch_node(num,node,nodes=[]):
+def fetch_node(num,node,):
     for value in node:
         if value.get('num') and value.get('num') == num:
             hit_node(value.get('nodes'))
         if value.get('nodes'):
-            fetch_node(num,value.get('nodes'),nodes)
+            fetch_node(num,value.get('nodes'))
 def hit_node(node):
     global result
     for value in node[0].get('nodes'):
@@ -33,8 +33,17 @@ def get_workspace_windows(num):
     if data.get('nodes'):
         return fetch_node(num,data.get('nodes'))
     return False
+def mark_windows():
+    index = 1
+    for id in result:
+        cmd='i3-msg "[con_id={0}]" mark {1}'.format(id,index)
+        os.popen(cmd).read()
+        index=index+1
+        
 num = get_current_worksapce()
 get_workspace_windows(num)
+print(result)
+mark_windows()
 if len(sys.argv) == 2 and len(result) >= (int(sys.argv[1])-1):
     index = int(sys.argv[1])-1
     swtich_wm(result[index])
